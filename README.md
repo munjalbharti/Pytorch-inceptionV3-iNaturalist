@@ -5,7 +5,8 @@ This repository contains the inceptionV3 model pretrained on iNaturalist dataset
 Large Scale Fine-Grained Categorization and Domain-Specific Transfer Learning (https://github.com/richardaecn/cvpr18-inaturalist-transfer)
 
 
-Model architecture is defined in myinception.py
+The pytorch model architecture is defined in myinception.py.
+
 The converted pretrained model can be found here https://drive.google.com/file/d/1VHcS2o0aYtr1MkYQP_uRgEGcM9bIcM_E/view
 
 
