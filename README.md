@@ -1,4 +1,4 @@
-# Pytorch InceptionV3 model for CUB Classification using iNat pretrained model
+# Pytorch InceptionV3 model for CUB Classification using iNaturalist pretrained model
 
 
 The model is converted from tensorflow implmentation of work
