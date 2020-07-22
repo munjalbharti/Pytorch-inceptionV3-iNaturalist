@@ -10,7 +10,7 @@ The converted pretrained model can be found here https://drive.google.com/file/d
 
 
 ##Training on CUB dataset:
-To train the network on cub dataset run the following command:
+To train the network on CUB dataset run the following command:
 
 python train_inception_classifier.py --cuda --save_dir='<PATH_WHERE_MODEL_SAVED>'
 
