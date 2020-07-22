@@ -33,15 +33,14 @@ def parse_args():
   """
   parser = argparse.ArgumentParser(description='Train a Fast R-CNN network')
 
-
-
-  parser.add_argument('--set', dest='set_cfgs',
-                      help='set config keys', default=None,
-                      nargs=argparse.REMAINDER)
-
   parser.add_argument('--cuda', dest='cuda',
                       help='whether use CUDA',
                       action='store_true')
+
+  parser.add_argument('--load', dest='load',
+                      help='model to be used for testing',
+                      default='/export/work/m.bharti/output/inception/cub_train/default/cub_inception_30.pth')
+
 
   args = parser.parse_args()
   return args
@@ -63,7 +62,7 @@ if __name__ == '__main__':
   args.imdb_name = "cub_train"
   args.imdbval_name = "cub_test"
 
-  load_name= '/export/work/m.bharti/output/inception/cub_train/default/faster_rcnn_1_30_93.pth'
+  load_name = args.load
 
   # initilize the network here.
   inception = inceptionV3(200)
@@ -118,6 +117,6 @@ if __name__ == '__main__':
       total += batch
       print('imgs:', total)
 
-  print("accuracy", correct/total)
+  print("accuracy", float(correct)/total)
 
 
