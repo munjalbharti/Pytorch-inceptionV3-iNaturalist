@@ -14,7 +14,7 @@ Note that the classifier (last fully connected layer) is trained on CUB (200 cla
 ## Results on CUB Classification
 |    Pretrained Model            | CUB-200  |
 | -------------            |:-------------:| 
-| iNat           |   89.2  |
+| iNat           |   89.1  |
 
 
 
