@@ -39,7 +39,7 @@ def parse_args():
 
   parser.add_argument('--load', dest='load',
                       help='model to be used for testing',
-                      default='/export/work/m.bharti/output/inception/cub_train/default/cub_inception_30.pth')
+                      default='/export/work/m.bharti/output/cub_inception_30.pth')
 
 
   args = parser.parse_args()
