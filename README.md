@@ -12,10 +12,12 @@ The converted pretrained model can be found here https://drive.google.com/file/d
 ##Training on CUB dataset:
 To train the network on cub dataset run the following command:
 
+python train_inception_classifier.py --cuda --save_dir='<PATH_WHERE_MODEL_SAVED>'
+
 Note that this will only train the classifier (last fully connected layer) on CUB dataset (200 classes). However the feature extractor (all previous layers) is taken from pretrained iNaturalist model. 
 
 ##Testing on CUB dataset:
- python test_inception_classifier.py --cuda --load='<PATH_TO_MODEL>/cub_inception_30.pth'
+ python test_inception_classifier.py --cuda --load='<PATH_WHERE_MODEL_SAVED>/cub_inception_30.pth'
 
 ## Results on CUB Classification
 |    Pretrained Model            | CUB-200  |
