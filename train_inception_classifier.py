@@ -86,10 +86,6 @@ def parse_args():
                         help='checkepoch to load model',
                         default=1, type=int)
 
-    parser.add_argument('--exp_name', dest='exp_name',
-                        help='Experiment name for the folder',
-                        default='default1')
-
 
 
     args = parser.parse_args()
@@ -111,7 +107,7 @@ if __name__ == '__main__':
         print("WARNING: You have a CUDA device, so you should probably run with --cuda")
 
 
-    output_dir = args.save_dir + "/" + args.net + "/" + args.imdb_name + "/" + args.exp_name
+    output_dir = args.save_dir
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
