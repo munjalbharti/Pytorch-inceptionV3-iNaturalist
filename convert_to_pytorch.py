@@ -10,29 +10,26 @@ from tensorflow.python.tools.inspect_checkpoint import print_tensors_in_checkpoi
 model = Inception3()
 
 #CUB model trained in tensorflow
-#tf_path = os.path.abspath('/home/m.bharti/svn/FineGrainedClassification/cvpr18-inaturalist-transfer/checkpoints/cub_200/auxlogits_aug_resize/model.ckpt-2810')  # Path to our TensorFlow checkpoint
+tf_path = os.path.abspath('/home/m.bharti/svn/FineGrainedClassification/cvpr18-inaturalist-transfer/checkpoints/cub_200/auxlogits_aug_resize/model.ckpt-2810')  # Path to our TensorFlow checkpoint
 
 
 ## iNaturalist path, does not work
 #tf_path = os.path.abspath('./checkpoints/inception/inception_v3_iNat_299.ckpt')
+#print_tensors_in_checkpoint_file(file_name='./checkpoints/inception/inception_v3_iNat_299.ckpt', tensor_name='', all_tensors=True)
+#reader = pywrap_tensorflow.NewCheckpointReader('./checkpoints/inception/inception_v3_iNat_299.ckpt')
+#init_vars = reader.get_variable_to_shape_map()
 
-print_tensors_in_checkpoint_file(file_name='./checkpoints/inception/inception_v3_iNat_299.ckpt', tensor_name='', all_tensors=True)
-
-reader = pywrap_tensorflow.NewCheckpointReader('./checkpoints/inception/inception_v3_iNat_299.ckpt')
-init_vars = reader.get_variable_to_shape_map()
-
-#print_tensors_in_checkpoint_file(file_name='./checkpoints/inception/inception_v3_iNat_299.ckpt', all_tensors=True, tensor_name='')
-
-#init_vars = tf.train.list_variables(tf_path)
+#
+init_vars = tf.train.list_variables(tf_path)
 #pprint(init_vars)
 #print(len(init_vars))
 
 tf_vars = []
-for key in init_vars:
+for key, value in init_vars:
     #print("Loading TF weight {} with shape {}".format(name, shape))
     print(key)
-    array = reader.get_tensor(key)
-   # array1 = tf.train.load_variable(tf_path, name)
+    #array = reader.get_tensor(key)
+    array = tf.train.load_variable(tf_path, key)
     tf_vars.append((key, array))
 
 print("Total vars {}".format(len(tf_vars)))
@@ -137,9 +134,9 @@ for full_name, array in tf_vars:
 
 
 pprint("Updated {} parameters".format(count))
-#torch.save(model.state_dict(), './cub_inceptionv3_again.pth')
+torch.save(model.state_dict(), './cub_inceptionv3.pth')
 
-torch.save(model.state_dict(), './iNat_inceptionv3.pth')
+#torch.save(model.state_dict(), './iNat_inceptionv3.pth')
 
 
 
