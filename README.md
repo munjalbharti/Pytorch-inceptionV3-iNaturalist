@@ -11,8 +11,8 @@ Trained pytorch can be found here https://drive.google.com/file/d/1VHcS2o0aYtr1M
 
 
 ## Results on CUB Classification  [3]
-    |            | CUB-200  |
-| -------------  | -----: |
+|    Pretrained Model            | CUB-200  |
+| -------------            |:-------------:| 
 | iNat           |   89.2  |
 
 
