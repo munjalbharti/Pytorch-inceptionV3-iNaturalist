@@ -7,7 +7,8 @@ Large Scale Fine-Grained Categorization and Domain-Specific Transfer Learning (h
 
 The pytorch model architecture is defined in myinception.py.
 
-The converted pretrained model can be found here https://drive.google.com/file/d/1VHcS2o0aYtr1MkYQP_uRgEGcM9bIcM_E/view
+The converted pretrained model can be found here
+https://drive.google.com/file/d/1VHcS2o0aYtr1MkYQP_uRgEGcM9bIcM_E/view?usp=sharing
 
 
 ##Training on CUB dataset:
